@@ -21,7 +21,7 @@ const createArray = (length) => {
   const result = []
 
   for (let i = 0; i < length; i++) {
-    result.unshift(null)
+    result.push(null)
   }
 
   return result
@@ -78,7 +78,7 @@ const createHtml = (data) => {
   for (const week of data) {
     let inner = ''
 
-    inner = addCell(inner, 'table__cell table__cell_sidebar', `Week ${week.week}`)
+   
 
     for (const day of week.days) {
       let classString = 'table__cell'
@@ -92,7 +92,7 @@ const createHtml = (data) => {
 
       inner = addCell(inner, classString, day.value)
     }
-
+    inner = addCell(inner, 'table__cell table__cell_sidebar', `Week ${week.week}`)
     result += `<tr>${inner}</tr>`
   }
 
